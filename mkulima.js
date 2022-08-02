@@ -1,59 +1,51 @@
 class Mkulima{
     constructor(){
-    this.farmer = [];
-    this.groceryVendor = [];
-    this.product = [];
-    this.addFarm = (farmId, name, farmer, phoneNumber, address) => {
-    this.farmer.push({farmId,name,farmer,phoneNumber,address})
-    }
+    this.farms = [];
+    this.groceryVendors = [];
+    this.products = [];
+    this.addFarm = (farmId, name, farmer, phone, address) => {
+    this.farms.push({farmId,name,farmer,phone,address})}
     this.removeFarm = (farmId) => {
-    let specific = this.farmer.find(item => item.farmId ===farmId);
-    let farmIndex = this.farmer.indexOf(specific);
-    this.farmer.splice(farmIndex, 1);
+    let Item = this.farms.find(item => item.farmId ===farmId);
+    let farmIndex = this.farms.indexOf(Item);
+    this.farms.splice(farmIndex, 1);
     }
     this.updateFarm = function(farmId,newFarmId,newFarmName,newFarmerName,newPhone,newAddress){
-    let specificFarm = this.farms.find(item => item.farmId ===farmId)
-    specificFarm.farmId =newFarmId;
-    specificFarm.farmName =newFarmName;
-    specificFarm.farmer =newFarmerName;
-    specificFarm.phone =newPhone;
-    specificFarm.address =newAddress;
+    let variableFarm = this.farms.find(item => item.farmId ===farmId)
+    variableFarm.farmId =newFarmId;
+    variableFarm.farmName =newFarmName;
+    variableFarm.farmer =newFarmerName;
+    variableFarm.phone =newPhone;
+    variableFarm.address =newAddress;
     }
     this.getFarm = (Id)=>{
-    console.log(this.farms.find(object=>object.farmId===Id))
-    }
+    console.log(this.farms.find(object=>object.farmId===Id))}
     this.addProduct = (productId, productName, price) => {
-    this.product.push({productId,productName,price})
-    
-    }
+    this.product.push({productId,productName,price})}
     this.removeProduct = (productId) => {
-    let specific = this.product.find(item => item.productId ===productId);
-    let productIndex = this.product.indexOf(specific);
+    let variable = this.product.find(item => item.productId ===productId);
+    let productIndex = this.product.indexOf(variable);
     this.product.splice(productIndex, 1);
     }
     this.updateProduct = function(productId,newProductId,newProductName,newPrice){
-    let specificProduct = this.product.find(item => item.productId ===productId)
-    specificProduct.productId =newProductId;
-    specificProduct.productName = newProductName;
-    specificProduct.price = newPrice;
+    let variableProduct = this.product.find(item => item.productId ===productId)
+    variableProduct.productId =newProductId;
+    variableProduct.productName = newProductName;
+    variableProduct.price = newPrice;
     }
     this.getProduct = (Id)=>{
-    console.log(this.product.find(object=>object.productId===Id))
-    }
+    console.log(this.product.find(object=>object.productId===Id))}
     this.printProducts = ()=>{
-    console.log(this.product)
-    }
+    console.log(this.product)}
     this.calculateOrderCost = (productId,quantity)=>{
-    let specificProduct = this.product.find(object=>object.productId===productId);
-    console.log(`${quantity} ${specificProduct.productName} for KES ${quantity*specificProduct.price}`);
+    let variableProduct = this.product.find(object=>object.productId===productId);
+    console.log(`${quantity} ${variableProduct.productName} for KES ${quantity*variableProduct.price}`);
     }
     }
     }
-    
     let farm1 = new Mkulima();
-    farm1.addFarm("897","Musyoka","","0113544192", "KK 897 K");
-    farm1.addFarm("774","Mwenda","","03884671882", "KK 774 K");
-    farm1.addFarm("124","Musembi","","07893377225", "KN 124 K");
+    farm1.addFarm("345","Jane","Ndung'u","0113544192", "JN988");
+    farm1.addFarm("783","Alice","Wambui","0725274384", "AW7362");
+    farm1.addFarm("194","Stanley","Gitung'o","0729837078", "SG093");
     console.log(farm1.farms);
-    
-    farm1.removeFarm("124");
+    farm1.removeFarm("783")
